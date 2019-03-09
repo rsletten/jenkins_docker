@@ -1,0 +1,21 @@
+version: "2"
+
+networks:
+  jenkins:
+    external: false
+
+volumes:
+  jenkins:
+    driver: local
+
+services:
+  server:
+    image: jenkins/jenkins:lts
+    restart: always
+    networks:
+      - jenkins
+    volumes:
+      - jenkins:/var/jenkins_home
+    ports:
+       - "8080:8080"
+       - "50000:50000"

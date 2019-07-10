@@ -10,7 +10,7 @@ volumes:
 
 services:
   server:
-    image: jenkins/jenkins:lts
+    image: jenkins:latest
     restart: always
     networks:
       - jenkins

@@ -10,12 +10,13 @@ volumes:
 
 services:
   server:
-    image: jenkins:latest
+    image: rsletten:jenkins
     restart: always
     networks:
       - jenkins
     volumes:
       - jenkins:/var/jenkins_home
+      - /home/rsletten/ansible:/var/jenkins_home/ansible
     ports:
       - "192.168.1.203:8080:8080"
       - "192.168.1.203:50000:50000"
